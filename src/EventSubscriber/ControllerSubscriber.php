@@ -13,7 +13,7 @@ class ControllerSubscriber implements EventSubscriberInterface
     private Reader $reader;
 
     public function __construct(
-        Reader $reader,
+        Reader $reader
     ) {
         $this->reader = $reader;
     }

@@ -50,7 +50,7 @@ class Reader
      * @param string|object $class
      */
     private function filterAnnotationClass(
-        $annotation,
+        $annotation
     ): bool {
         return \is_a($annotation, $this->annotationClass, true);
     }
