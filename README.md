@@ -1,6 +1,6 @@
 # Annotation
 
-This bundle provides an unified API for [Doctrine Annotations](https://www.doctrine-project.org/projects/annotations.html) and [PHP8 Attributes](https://www.php.net/manual/de/language.attributes.overview.php) as (Controller) Annotations.
+This bundle provides a unified API for [Doctrine Annotations](https://www.doctrine-project.org/projects/annotations.html) and [PHP8 Attributes](https://www.php.net/manual/de/language.attributes.overview.php) as (Controller) Annotations.
 
 ## Usage
 
