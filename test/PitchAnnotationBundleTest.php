@@ -22,7 +22,7 @@ class PitchAnnotationBundleTest extends KernelTestCase
         {
             public function getProjectDir()
             {
-                return $this->dir ??= sys_get_temp_dir() . '/' . spl_object_id($this) . '/';
+                return $this->dir ??= sys_get_temp_dir() . '/PitchAnnotation-' . uniqid() . '/';
             }
 
             public function registerBundles(): iterable
