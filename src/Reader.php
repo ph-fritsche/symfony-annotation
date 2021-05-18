@@ -76,7 +76,9 @@ class Reader
     private function getPhpAttributes(
         $reflector
     ) {
-        return \PHP_MAJOR_VERSION >= 8 ? $reflector->getAttributes($this->annotationClass, ReflectionAttribute::IS_INSTANCEOF) : [];
+        return \PHP_MAJOR_VERSION >= 8
+            ? $reflector->getAttributes($this->annotationClass, ReflectionAttribute::IS_INSTANCEOF)
+            : [];
     }
 
     private function createAttributeObject(

@@ -36,11 +36,11 @@ class ControllerSubscriber implements EventSubscriberInterface
         $reflMethod = new ReflectionMethod($controller[0], $controller[1]);
 
         $attr = [];
-        foreach($this->reader->getAnnotations($reflMethod)->all() as $a) {
+        foreach ($this->reader->getAnnotations($reflMethod)->all() as $a) {
             $attr[\get_class($a)][] = $a;
         }
 
-        foreach($attr as $class => $annotations) {
+        foreach ($attr as $class => $annotations) {
             $event->getRequest()->attributes->set('_' . $class, $annotations);
         }
     }

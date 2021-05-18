@@ -52,8 +52,7 @@ abstract class AbstractAnnotation implements Annotation
         &$value,
         ?ReflectionType $type
     ) {
-        if (
-            $type instanceof ReflectionNamedType
+        if ($type instanceof ReflectionNamedType
             && gettype($value) !== $type->getName()
             && !is_a($value, $type->getName())
         ) {

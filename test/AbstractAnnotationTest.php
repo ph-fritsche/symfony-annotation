@@ -83,7 +83,7 @@ class AbstractAnnotationTest extends TestCase
 
         $this->assertCount(1, $annotations);
         $this->assertInstanceOf($class, $annotations[0]);
-        foreach($props as $propName => $propValue) {
+        foreach ($props as $propName => $propValue) {
             $this->assertSame($propValue, $annotations[0]->$propName);
         }
     }
