@@ -14,6 +14,9 @@ use Doctrine\Common\Annotation\Reader as DoctrineReader;
 use Pitch\Annotation\Annotation;
 use Pitch\Annotation\Reader as PitchReader;
 
+/**
+ * @Annotation
+ */
 #[Attribute]
 class MyAnnotation implements Annotation
 {
