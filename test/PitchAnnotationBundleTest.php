@@ -6,6 +6,7 @@ use Pitch\Annotation\Fixtures\MySettersAnnotation;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -35,6 +36,9 @@ class PitchAnnotationBundleTest extends KernelTestCase
 
             public function registerContainerConfiguration(LoaderInterface $loader)
             {
+                $loader->load(function (ContainerBuilder $containerBuilder) {
+                    $containerBuilder->setParameter('kernel.secret', 'secret');
+                });
             }
         });
     }
@@ -72,7 +76,7 @@ class PitchAnnotationBundleTest extends KernelTestCase
                     new MyPropertiesAnnotation("baz"),
                 ]
                 : [
-                    new MyPropertiesAnnotation("baz"),
+                    new MyPropertiesAnnotation("foo"),
                 ],
             $request->attributes->get('_' . MyPropertiesAnnotation::class),
         );
