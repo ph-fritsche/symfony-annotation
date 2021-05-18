@@ -1,0 +1,39 @@
+{
+    "name": "pitch/annotation",
+    "description": "Annotation abstraction for Doctrine Annotations and PHP8 attributes as (Controller) Annotations",
+    "keywords": ["Annotation", "Attribute", "Symfony", "Controller"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philipp Fritsche",
+            "email": "ph.fritsche@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Pitch\\Annotation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pitch\\Annotation\\": "test/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "doctrine/annotations": "^1.12",
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.6",
+        "symfony/http-kernel": "^5",
+        "symfony/framework-bundle": "^5"
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint-fix" : "phpcbf",
+        "test": "phpunit",
+        "test-s": "phpunit --stop-on-failure"
+    }
+}
