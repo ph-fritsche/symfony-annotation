@@ -17,11 +17,11 @@ class PitchAnnotationBundleTest extends KernelTestCase
 {
     private EventDispatcher $dispatcher;
 
-    protected static function getKernelClass()
+    protected static function getKernelClass(): string
     {
-        return get_class(new class('', true) extends Kernel
+        return get_class(new class('dev', true) extends Kernel
         {
-            public function getProjectDir()
+            public function getProjectDir(): string
             {
                 return $this->dir ??= sys_get_temp_dir() . '/PitchAnnotation-' . uniqid() . '/';
             }
